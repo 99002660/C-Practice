@@ -210,5 +210,5 @@ A/c No. : 911
 Balance : 87695
 Balance of A/c no. 911 is Rs.87695
 
-
+> https://www.quora.com/What-are-some-situations-when-a-friend-function-can-be-useful-in-c++
 
