@@ -1,3 +1,8 @@
+
+https://community.nxp.com/t5/i-MX-Processors/how-to-use-uuu-to-burn-imx6-NAND-flash-board/m-p/1024848/highlight/true
+
+
+
 # C-Practice
 
 ## Class and Objects
