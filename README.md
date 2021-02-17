@@ -220,3 +220,18 @@ Balance of A/c no. 911 is Rs.87695
 https://www.includehelp.com/cpp-tutorial/static-data-member-in-cpp-with-example.aspx
 https://www.geeksforgeeks.org/static-keyword-cpp/
 
+
+3
+
+
+1
+I am implementing my own linkedlist in C++ as part of a class assignment. My main concern isn't with the style of the code nor the pros/cons of including or not including certain features as I am still developing member functions.
+
+I would mainly like to know if my approach of declaring LinkedList as a friend of Node is reasonable. My decision for doing this comes from the fact that there is absolutely no need for anything to access my Node class besides LinkedList (e.g. I don't want to be able to create a Node object in main). When I do this, however, I find myself no longer needing public and private access modifiers for Node. Furthermore, I don't particularly need getter/setter methods as I can just access Node's member variables directly from LinkedList (you can see below that I don't call Node::getVal() or Node::getNext() once).
+
+
+Suppose, you need to operate on objects of two different class then,friend function can be very helpful. You can operate on two objects of different class without using friend function but, you program will be long, complex and hard to understand.
+You can take this simple example further by considering a more complex class such as a Window. Quite likely a Window will have many function/data elements that should not be publicly accessible, but ARE needed by a related class such as a WindowManager.
+
+
+dependancy in work
