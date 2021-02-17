@@ -216,4 +216,7 @@ Balance : 87695
 Balance of A/c no. 911 is Rs.87695
 
 > https://www.quora.com/What-are-some-situations-when-a-friend-function-can-be-useful-in-c++
+> 
+https://www.includehelp.com/cpp-tutorial/static-data-member-in-cpp-with-example.aspx
+https://www.geeksforgeeks.org/static-keyword-cpp/
 
