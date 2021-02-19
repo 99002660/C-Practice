@@ -313,3 +313,42 @@ Output:
 After count as a static- once it initiallised scope of the variable remains their till the program get finished. It is taking previous value of the count at each turn.
 
 
+#include <iostream>
+using namespace std;
+
+class First{
+    public:
+    static int count;             //int count; - Not applicable
+    static void counter(){        //void counter() - Applicable
+        
+        cout<<count<<" "<<endl;
+        count++; 
+        
+    }
+    
+    
+};
+int First:: count=0;
+int main() {
+    // Write C++ code here
+    First f;
+    for(int i=0;i<=5;i++){
+        f.counter();    
+    }
+    
+
+    return 0;
+}
+
+Output:
+/tmp/BvViJyuuP4.o
+0 
+1 
+2 
+3 
+4 
+5 
+
+Here, in above program we cant initialise and declare static variable together. We need to initialise outside the class. And static method can access static data as well as non static method also can access static data but non static data cant be accessed by static method.
+
+
