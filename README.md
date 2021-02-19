@@ -235,3 +235,81 @@ You can take this simple example further by considering a more complex class suc
 
 
 dependancy in work
+
+
+
+## Static
+
+#include <iostream>
+using namespace std;
+
+// class First{
+//     public:
+    
+    void counter(){
+        int count=0;
+        cout<<count<<" "<<endl;
+        count++; 
+        
+    }
+    
+//};
+int main() {
+    // Write C++ code here
+    //First f;
+    for(int i=0;i<=5;i++){
+        counter();    
+    }
+    
+
+    return 0;
+}
+
+Output:
+
+/tmp/BvViJyuuP4.o
+0 
+0 
+0 
+0 
+0 
+0 
+
+Without using static variable- count is initializing every time.
+
+#include <iostream>
+using namespace std;
+
+// class First{
+//     public:
+    
+    void counter(){
+        static int count=0;
+        cout<<count<<" "<<endl;
+        count++; 
+        
+    }
+    
+//};
+int main() {
+    // Write C++ code here
+    //First f;
+    for(int i=0;i<=5;i++){
+        counter();    
+    }
+    
+
+    return 0;
+}
+Output:
+/tmp/BvViJyuuP4.o
+0 
+1 
+2 
+3 
+4 
+5 
+
+After count as a static- once it initiallised scope of the variable remains their till the program get finished. It is taking previous value of the count at each turn.
+
+
