@@ -351,4 +351,108 @@ Output:
 
 Here, in above program we cant initialise and declare static variable together. We need to initialise outside the class. And static method can access static data as well as non static method also can access static data but non static data cant be accessed by static method.
 
+### This Keyword
+#include <iostream>
+using namespace std;
+
+
+class This{
+    public:
+   
+    string name;
+    int age;
+    void getInfo(string name, int age){
+        
+        name=name;
+        age=age;
+    }
+    void display(){
+        cout<<"Name: "<<name<<endl;
+        cout<<"Age: "<<age<<endl;
+    }
+};
+int main() {
+    This t1;
+    t1.getInfo("Ayan", 20);
+    t1.display();
+    return 0;
+}
+
+Output:
+/tmp/UO1JCBXeRl.o
+Name: 
+Age: 0
+In this program 
+
+Scenario 2
+#include <iostream>
+using namespace std;
+
+
+class This{
+    public:
+    string name="Aditya";
+    int age=21;
+    //string name;
+    //int age;
+    void getInfo(string name, int age){
+        //this->name=name;
+        //this->age=age;
+        name=name;
+        age=age;
+    }
+    void display(){
+        cout<<"Name: "<<name<<endl;
+        cout<<"Age: "<<age<<endl;
+    }
+};
+int main() {
+    This t1;
+    t1.getInfo("Ayan", 20);
+    t1.display();
+    return 0;
+}
+
+Output:
+/tmp/UO1JCBXeRl.o
+Name: Aditya
+Age: 21
+
+Scenario 3
+#include <iostream>
+using namespace std;
+
+
+class This{
+    public:
+    //string name="Aditya";
+    //int age=21;
+    string name;
+    int age;
+    void getInfo(string name, int age){
+        this->name=name;
+        this->age=age;
+        //name=name;
+        //age=age;
+    }
+    void display(){
+        cout<<"Name: "<<name<<endl;
+        cout<<"Age: "<<age<<endl;
+    }
+};
+int main() {
+    This t1;
+    t1.getInfo("Ayan", 20);
+    t1.display();
+    return 0;
+}
+
+Output:
+/tmp/UO1JCBXeRl.o
+Name: Ayan
+Age: 20
+
+Scenario 4
+
+
 
