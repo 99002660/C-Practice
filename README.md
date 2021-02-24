@@ -534,3 +534,21 @@ Rules of Virtual Function
     Output:
     Derived Class is invoked 
     
+> Why virtual function
+Virtual Functions are used to support Runtime Polymorphism. ... When the virtual function is called by using a Base class pointer, the compiler decides at run-time which version of the function - i.e. the Base class version or the overridden Derived class version - is to be called. This is called Runtime Polymorphism.
+
+### pure virtual function and abstarct class
+A pure virtual function is a virtual function in C++ for which we need not to write any function definition and only we have to declare it. It is declared by assigning 0 in the declaration.
+
+* An abstract class is a class in C++ which have at least one pure virtual function.
+
+* Abstract class can have normal functions and variables along with a pure virtual function.
+
+* Abstract class cannot be instantiated, but pointers and references of Abstract class type can be created.
+
+* Abstract classes are mainly used for Upcasting, so that its derived classes can use its interface.
+
+* If an Abstract Class has derived class, they must implement all pure virtual functions, or else they will become Abstract too.
+
+* We can’t create object of abstract class as we reserve a slot for a pure virtual function in Vtable, but we don’t put any address, so Vtable will remain incomplete.
+
