@@ -352,6 +352,9 @@ Output:
 Here, in above program we cant initialise and declare static variable together. We need to initialise outside the class. And static method can access static data as well as non static method also can access static data but non static data cant be accessed by static method.
 
 ### This Keyword
+
+If local variable and function argument name is same then this keyword is used to distinguiesh the both them. As well as this keyword is used to display the value which is passed by function.
+
 #include <iostream>
 using namespace std;
 
@@ -456,3 +459,78 @@ Scenario 4
 
 
 
+
+
+Virtual function
+Rules of Virtual Function
+
+    Virtual functions must be members of some class.
+    Virtual functions cannot be static members.
+    They are accessed through object pointers.
+    They can be a friend of another class.
+    A virtual function must be defined in the base class, even though it is not used.
+    The prototypes of a virtual function of the base class and all the derived classes must be identical. If the two functions with the same name but different prototypes, C++ will consider them as the overloaded functions.
+    We cannot have a virtual constructor, but we can have a virtual destructor
+    Consider the situation when we don't use the virtual keyword.
+    #include <iostream>  
+    using namespace std;  
+    class A  
+    {  
+       int x=5;  
+        public:  
+        void display()  
+        {  
+            std::cout << "Value of x is : " << x<<std::endl;  
+        }  
+    };  
+    class B: public A  
+    {  
+        int y = 10;  
+        public:  
+        void display()  
+        {  
+            std::cout << "Value of y is : " <<y<< std::endl;  
+        }  
+    };  
+    int main()  
+    {  
+        A *a;  
+        B b;  
+        a = &b;  
+       a->display();  
+        return 0;  
+    }  
+    
+    Output:
+    Value of x is : 5
+    
+    In the above example, * a is the base class pointer. The pointer can only access the base class members but not the members of the derived class. Although C++ permits the base pointer to point to any object derived from the base class, it cannot directly access the members of the derived class. Therefore, there is a need for virtual function which allows the base pointer to access the members of the derived class.
+    
+    With virtual function
+       #include <iostream>    
+    {    
+     public:    
+     virtual void display()    
+     {    
+      cout << "Base class is invoked"<<endl;    
+     }    
+    };    
+    class B:public A    
+    {    
+     public:    
+     void display()    
+     {    
+      cout << "Derived Class is invoked"<<endl;    
+     }    
+    };    
+    int main()    
+    {    
+     A* a;    //pointer of base class    
+     B b;     //object of derived class    
+     a = &b;    
+     a->display();   //Late Binding occurs    
+    }    
+    
+    Output:
+    Derived Class is invoked 
+    
