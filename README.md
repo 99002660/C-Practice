@@ -461,17 +461,17 @@ Scenario 4
 
 
 
-Virtual function
-Rules of Virtual Function
+### Virtual function
 
-    Virtual functions must be members of some class.
-    Virtual functions cannot be static members.
-    They are accessed through object pointers.
-    They can be a friend of another class.
-    A virtual function must be defined in the base class, even though it is not used.
-    The prototypes of a virtual function of the base class and all the derived classes must be identical. If the two functions with the same name but different prototypes, C++ will consider them as the overloaded functions.
-    We cannot have a virtual constructor, but we can have a virtual destructor
-    Consider the situation when we don't use the virtual keyword.
+Rules of Virtual Function
+* Virtual functions must be members of some class.
+* Virtual functions cannot be static members.
+* They are accessed through object pointers.
+* They can be a friend of another class.
+* A virtual function must be defined in the base class, even though it is not used.
+* The prototypes of a virtual function of the base class and all the derived classes must be identical. If the two functions with the same name but different prototypes, C++ will consider them as the overloaded functions.
+* We cannot have a virtual constructor, but we can have a virtual destructor
+* Consider the situation when we don't use the virtual keyword.
     #include <iostream>  
     using namespace std;  
     class A  
