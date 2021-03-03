@@ -821,3 +821,20 @@ Expected Output
     I am an isosceles triangle
 
     I am a triangle
+    
+    
+### Abstract class
+Sometimes implementation of all function cannot be provided in a base class because we don’t know the implementation. Such a class is called abstract class. For example, let Shape be a base class. We cannot provide implementation of function draw() in Shape, but we know every derived class must have implementation of draw(). Similarly an Animal class doesn’t have implementation of move() (assuming that all animals move), but all animals must know how to move. We cannot create objects of abstract classes.
+
+A pure virtual function (or abstract function) in C++ is a virtual function for which we don’t have implementation, we only declare it. A pure virtual function is declared by assigning 0 in declaration. 
+
+### Interfaces
+Rules Associated with Interfaces in C++
+
+There are certain rules that we need to keep in mind while working with interfaces/ abstract classes in C++.
+
+* A pure virtual function can only be declared, it cannot be defined.
+* You cannot assign any value other than 0 to the pure virtual function.
+* It is not possible to create an instance of a class. For instance, with reference to the above program, you cannot create an object of Apple type. It would 		result in a compilation error.
+* In case the derived class cannot implement the pure virtual function of the base class, then the derived class acts as an abstract class.
+* It is possible to create a pointer with a reference of base abstract class points to the instance of the derived class.
