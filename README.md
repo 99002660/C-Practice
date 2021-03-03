@@ -838,3 +838,5 @@ There are certain rules that we need to keep in mind while working with interfac
 * It is not possible to create an instance of a class. For instance, with reference to the above program, you cannot create an object of Apple type. It would 		result in a compilation error.
 * In case the derived class cannot implement the pure virtual function of the base class, then the derived class acts as an abstract class.
 * It is possible to create a pointer with a reference of base abstract class points to the instance of the derived class.
+
+
