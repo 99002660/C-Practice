@@ -839,4 +839,59 @@ There are certain rules that we need to keep in mind while working with interfac
 * In case the derived class cannot implement the pure virtual function of the base class, then the derived class acts as an abstract class.
 * It is possible to create a pointer with a reference of base abstract class points to the instance of the derived class.
 
+Importance of Interfaces in C++
+
+After developing an understanding of pure virtual functions, let us acknowledge its significance by considering a simple problem at hand. Suppose you have created a class named Apple with data members iPhoneX, iPad_Pro, and iPod with member functions price(), ringtone() and alarm().
+
+Let us consider that the price of each product is fixed and cannot be altered. We know that Apple products have different prices like iPhoneX costs 65,500 and an iPad_Pro costs 48,000.
+Implementation of the class Apple for the function price() can be done only in one correct way, that is, by making this function pure abstract so that, we need not give implementation in the class Apple but all the classes that inherit Apple class must give implementation to this function. In this way, we can ensure that all Apple products have a fixed and unique price.
+
+Program:
+#include<iostream>
+using namespace std;
+class Apple
+{
+public:
+// Pure Virtual Function declaration
+virtual void price() = 0;
+// Member functions
+void ringtone() 
+{
+cout<<"The ringtone is: Reflection"<<endl;
+}
+};
+class iPhoneX: public Apple
+{
+public:
+void price() 
+{
+cout<<"The price is: 65,500"<<endl;
+}
+};
+int main()
+{
+cout<<"Welcome to DataFlair tutorials"<<endl<<endl;
+iPhoneX i;
+i.price();
+i.ringtone();
+return 0;
+}
+	
+Rules Associated with Interfaces in C++
+
+There are certain rules that we need to keep in mind while working with interfaces/ abstract classes in C++.
+
+A pure virtual function can only be declared, it cannot be defined.
+You cannot assign any value other than 0 to the pure virtual function.
+It is not possible to create an instance of a class. For instance, with reference to the above program, you cannot create an object of Apple type. It would result in a compilation error.
+In case the derived class cannot implement the pure virtual function of the base class, then the derived class acts as an abstract class.
+It is possible to create a pointer with a reference of base abstract class points to the instance of the derived class.
+
+For instance, with reference to the above program, you can achieve this task by writing the following statements:
+
+Apple *object = new iPhoneX();
+object -> price();
+
+
+
 
